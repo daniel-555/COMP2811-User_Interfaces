@@ -7,14 +7,20 @@ int main(int argc, char* argv[])
     QWidget* window = new QWidget();
     window->setWindowTitle("QHBoxLayout Test");
 
-    QPushButton* button1 = new QPushButton("One");
-    QPushButton* button2 = new QPushButton("Two");
-    QPushButton* button3 = new QPushButton("Three");
+    QLabel* label = new QLabel("&Name:");
+    QLineEdit* nameField = new QLineEdit();
+    label->setBuddy(nameField);
+
+
+    QPushButton* searchButton = new QPushButton("Search");
 
     QHBoxLayout* layout = new QHBoxLayout();
-    layout->addWidget(button1);
-    layout->addWidget(button2);
-    layout->addWidget(button3);
+    layout->addStretch();
+    layout->addWidget(label);
+    layout->addWidget(nameField);
+    layout->addWidget(searchButton);
+    layout->addStretch();
+
 
     window->setLayout(layout);
     window->show();
